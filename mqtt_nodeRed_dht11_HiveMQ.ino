@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "Wildfire";
-const char* password = "12345678";
+const char* ssid = "your ssid";
+const char* password = "your password";
 const char* mqtt_server = "public.mqtthq.com";
 const char* mqtt_topic = "lamp";
 const int LED_BUILTIN = 2 ;
@@ -36,7 +36,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-
+// topic, led on-off
   if (strcmp(topic, mqtt_topic) == 0) {
     if (payload[0] == '1') {
       digitalWrite(LED_BUILTIN, HIGH);
@@ -54,7 +54,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     
   }
 }
-
+//reconnect
 void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
