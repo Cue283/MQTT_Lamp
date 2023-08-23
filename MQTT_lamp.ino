@@ -3,7 +3,7 @@
 
 const char* ssid = "your ssid";
 const char* password = "your password";
-const char* mqtt_server = "public.mqtthq.com";
+const char* mqtt_server = "your mqtt ip";
 const char* mqtt_topic = "lamp";
 const int LED_BUILTIN = 2 ;
 const int led = 11 ;
